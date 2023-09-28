@@ -1,6 +1,6 @@
 container:
   type: ColumnPanel
-  properties: {col_widths: '{}'}
+  properties: {col_widths: '{"PDOKFU":10,"OJTUPM":50}'}
 components:
 - type: Label
   properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
@@ -113,10 +113,18 @@ components:
   properties: {role: null, align: left, tooltip: '', border: '', enabled: true, foreground: '#ffffff',
     visible: true, text: Previous, font_size: null, font: '', spacing_above: small,
     icon_align: left, spacing_below: small, italic: false, background: '#ff0000',
-    bold: false, underline: false, icon: 'fa:angle-double-left'}
+    bold: true, underline: false, icon: 'fa:angle-double-left'}
   name: button_1
   layout_properties: {grid_position: 'YYMRCG,PDOKFU'}
   event_bindings: {click: button_1_click}
+- type: Button
+  properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '#ffffff', visible: true, text: CALCULATE CARBON CREDITS, font_size: null,
+    font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+    background: '#004bfa', bold: true, underline: false, icon: 'fa:play'}
+  name: button_2
+  layout_properties: {grid_position: 'YYMRCG,OJTUPM'}
+  event_bindings: {click: button_2_click}
 - type: Spacer
   properties: {height: 32}
   name: spacer_1_copy

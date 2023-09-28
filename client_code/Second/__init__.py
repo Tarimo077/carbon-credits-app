@@ -2,13 +2,18 @@ from ._anvil_designer import SecondTemplate
 from anvil import *
 
 class Second(SecondTemplate):
-  def __init__(self, fuels, **properties):
+  def __init__(self, fuels, consumption, efficiency, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     fuelNum = len(fuels)
+    self.fuelNum = fuelNum
+    self.kwh = float(consumption)
+    self.eff = float(efficiency)
     sorted_list = sorted(fuels, key=lambda x: x != 'Gas')
     fuels = sorted_list
+    self.fuels = fuels
     haveGas = fuels.__contains__('Gas')
+    self.haveGas = haveGas
     if(haveGas == True):
       pass
     else:
@@ -42,4 +47,16 @@ class Second(SecondTemplate):
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('First')
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    if self.fuelNum == 1 and self.haveGas == True:
+      self.primary.text
+      if self.radio_button_1.selected == True:
+        self.gasKilo = 6
+      else:
+        self.gasKilo = 13
+      
+    elif self.fuelNum == 1 and self.haveGas == False:
+
 
