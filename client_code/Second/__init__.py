@@ -51,12 +51,9 @@ class Second(SecondTemplate):
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
     if self.fuelNum == 1 and self.haveGas == True:
-      self.primary.text
       if self.radio_button_1.selected == True:
         self.gasKilo = 6
       else:
         self.gasKilo = 13
-      
-    elif self.fuelNum == 1 and self.haveGas == False:
 
 
