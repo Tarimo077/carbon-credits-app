@@ -45,7 +45,7 @@ class First(FirstTemplate):
     if self.projectEmissions.text is None or self.efficiency.text is None or len(self.slctList) == 0:
       alert("Kindly fill in all fields")
     else:
-      open_form('Second')
+      open_form('Second', self.slctList)
 
 
     
