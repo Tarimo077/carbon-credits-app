@@ -1,7 +1,7 @@
-from ._anvil_designer import Form1Template
+from ._anvil_designer import FirstTemplate
 from anvil import *
 
-class Form1(Form1Template):
+class First(FirstTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
@@ -39,6 +39,14 @@ class Form1(Form1Template):
     self.radio = True
     self.efficiency.enabled = False
     self.efficiency.text = 72
+
+  def button_3_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    if self.projectEmissions.text is None or self.efficiency.text is None or len(self.slctList) == 0:
+      alert("Kindly fill in all fields")
+    else:
+      open_form('Second')
+
 
     
 

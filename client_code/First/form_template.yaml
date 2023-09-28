@@ -146,4 +146,16 @@ components:
     name: radio_button_2
     layout_properties: {slot: radioButton2}
     event_bindings: {clicked: radio_button_2_clicked}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_6
+    layout_properties: {}
+- type: Button
+  properties: {role: null, align: right, tooltip: '', border: '', enabled: true, foreground: '#ffffff',
+    visible: true, text: NEXT, font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '#006eff', bold: true, underline: false,
+    icon: 'fa:angle-double-right'}
+  name: button_3
+  layout_properties: {grid_position: 'MCXLDE,JFBKDJ'}
+  event_bindings: {click: button_3_click}
 is_package: true
