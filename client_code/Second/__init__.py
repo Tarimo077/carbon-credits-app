@@ -118,8 +118,8 @@ class Second(SecondTemplate):
     self.n_emissions = (self.kwh * 0.499) * ((100 - self.eff)/100)
     self.credits = self.emissions - self.n_emissions
     self.credits = round(self.credits)
-    alert("After switching to your new method you were able to reduce emissions by approximately " + str(self.credits) + " KGS")
-    print(self.credits)
+    creds = self.credits/1000
+    alert("After switching to your new method you were able to reduce emissions by approximately " + str(self.credits) + " KGS representing around " + str(creds) + " carbon credits" )
       
         
 
