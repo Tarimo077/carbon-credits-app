@@ -4,7 +4,7 @@ startup: {type: form, module: First}
 name: Carbon Credits
 startup_form: null
 runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
-metadata: {title: Powerpay Carbon Application}
+metadata: {title: Powerpay Carbon Application, logo_img: 'asset:apple-touch_icon.png'}
 services:
 - source: /runtime/services/tables.yml
   client_config: {}
