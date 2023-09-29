@@ -52,9 +52,75 @@ class Second(SecondTemplate):
     """This method is called when the button is clicked"""
     if self.fuelNum == 1:
       if self.haveGas == True:
-        if self.radio_button_1.selected == True:
-          self.gasKilo = 6
+        self.primaryFuel = (self.kwh * 0.499) * 0.43
+        self.emissions = self.primaryFuel
+      else: 
+        if self.fuels[0] == 'Charcoal':
+          self.primaryFuel = (self.kwh * 0.499) * 0.73
+          self.emissions = self.primaryFuel
         else:
-          self.gasKilo = 13
+          self.primaryFuel = (self.kwh * 0.499) * 0.85
+          self.emissions = self.primaryFuel
+    elif self.fuelNum == 2:
+      if self.haveGas == True:
+        if self.radio_button_1.selected == True:
+          self.primaryProportion = 6/float(self.primary.text)
+          self.secondaryProportion = float(self.secondary.text)
+          self.totalProportion = self.primaryProportion + self.secondaryProportion
+          self.primaryProportion = (self.primaryProportion/self.totalProportion) * 100
+          self.secondaryProportion = (self.secondaryProportion/self.totalProportion) * 100
+          self.primaryEmissions = (self.kwh * (self.primaryProportion/100) * 0.499) * 0.43
+          self.secondaryEmissions = (self.kwh * (self.secondaryProportion/100) * 0.499) * 0.73
+          self.emissions = self.primaryEmissions + self.secondaryEmissions
+        else:
+          self.primaryProportion = 13/float(self.primary.text)
+          self.secondaryProportion = float(self.secondary.text)
+          self.totalProportion = self.primaryProportion + self.secondaryProportion
+          self.primaryProportion = (self.primaryProportion/self.totalProportion) * 100
+          self.secondaryProportion = (self.secondaryProportion/self.totalProportion) * 100
+          self.primaryEmissions = (self.kwh * (self.primaryProportion/100) * 0.499) * 0.43
+          self.secondaryEmissions = (self.kwh * (self.secondaryProportion/100) * 0.499) * 0.73
+          self.emissions = self.primaryEmissions + self.secondaryEmissions
+      else:
+        self.primaryProportion = float(self.primary.text)
+        self.secondaryProportion = float(self.secondary.text)
+        self.totalProportion = self.primaryProportion + self.secondaryProportion
+        self.primaryProportion = (self.primaryProportion/self.totalProportion) * 100
+        self.secondaryProportion = (self.secondaryProportion/self.totalProportion) * 100
+        self.primaryEmissions = (self.kwh * (self.primaryProportion/100) * 0.499) * 0.73
+        self.secondaryEmissions = (self.kwh * (self.secondaryProportion/100) * 0.499) * 0.85
+        self.emissions = self.primaryEmissions + self.secondaryEmissions
+    else:
+      if self.radio_button_1.selected == True:
+        self.primaryProportion = 6/float(self.primary.text)
+        self.secondaryProportion = float(self.secondary.text)
+        self.tertiaryProportion = float(self.tertiary.text)
+        self.totalProportion = self.primaryProportion + self.secondaryProportion + self.tertiaryProportion
+        self.primaryProportion = (self.primaryProportion/self.totalProportion) * 100
+        self.secondaryProportion = (self.secondaryProportion/self.totalProportion) * 100
+        self.tertiaryProportion = (self.tertiaryProportion/self.totalProportion) * 100
+        self.primaryEmissions = (self.kwh * (self.primaryProportion/100) * 0.499) * 0.43
+        self.secondaryEmissions = (self.kwh * (self.secondaryProportion/100) * 0.499) * 0.73
+        self.tertiaryEmissions = (self.kwh * (self.tertiaryProportion/100) * 0.499) * 0.85
+        self.emissions = self.primaryEmissions + self.secondaryEmissions + self.tertiaryEmissions
+      else:
+        self.primaryProportion = 13/float(self.primary.text)
+        self.secondaryProportion = float(self.secondary.text)
+        self.tertiaryProportion = float(self.tertiary.text)
+        self.totalProportion = self.primaryProportion + self.secondaryProportion + self.tertiaryProportion
+        self.primaryProportion = (self.primaryProportion/self.totalProportion) * 100
+        self.secondaryProportion = (self.secondaryProportion/self.totalProportion) * 100
+        self.tertiaryProportion = (self.tertiaryProportion/self.totalProportion) * 100
+        self.primaryEmissions = (self.kwh * (self.primaryProportion/100) * 0.499) * 0.43
+        self.secondaryEmissions = (self.kwh * (self.secondaryProportion/100) * 0.499) * 0.73
+        self.tertiaryEmissions = (self.kwh * (self.tertiaryProportion/100) * 0.499) * 0.85
+        self.emissions = self.primaryEmissions + self.secondaryEmissions + self.tertiaryEmissions
+    self.n_emissions = (self.kwh * 0.499) * ((100 - self.eff)/100)
+    self.credits = self.emissions - self.n_emissions
+    self.credits = round(self.credits)
+    alert("After switching to your new method you were able to reduce emissions by approximately " + str(self.credits) + " KGS")
+    print(self.credits)
+      
+        
 
 
