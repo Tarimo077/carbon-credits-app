@@ -21,7 +21,7 @@ class Second(SecondTemplate):
       self.radio_button_2.visible = False
     if fuelNum == 1:
       if (haveGas == True):
-        self.lblPrimary.text = "How long does a full cylinder last you?(weeks)"
+        self.lblPrimary.text = "How long does a full cylinder of gas last you?(weeks)"
       else:
         self.lblPrimary.text = "How many kilos of " + str(fuels[0]) + " do you use in a week?"
       self.lblSecondary.visible = False
@@ -50,10 +50,11 @@ class Second(SecondTemplate):
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
-    if self.fuelNum == 1 and self.haveGas == True:
-      if self.radio_button_1.selected == True:
-        self.gasKilo = 6
-      else:
-        self.gasKilo = 13
+    if self.fuelNum == 1:
+      if self.haveGas == True:
+        if self.radio_button_1.selected == True:
+          self.gasKilo = 6
+        else:
+          self.gasKilo = 13
 
 
