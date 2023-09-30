@@ -10,6 +10,10 @@ startup: {type: form, module: First}
 package_name: Carbon_Credits
 allow_embedding: false
 name: Carbon Credits
-runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
+runtime_options:
+  version: 2
+  client_version: '3'
+  server_version: python3-full
+  server_spec: {base: python310-minimal}
 metadata: {title: Powerpay Carbon Application, logo_img: 'asset:apple-touch_icon.png'}
 startup_form: null
