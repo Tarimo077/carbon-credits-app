@@ -9,7 +9,7 @@ class Second(SecondTemplate):
     self.fuelNum = fuelNum
     self.kwh = float(consumption)
     self.eff = float(efficiency)
-    sorted_list = sorted(my_list, key=lambda x: (x != 'Gas', x != 'Charcoal', x))
+    sorted_list = sorted(fuels, key=lambda x: (x != 'Gas', x != 'Charcoal', x))
     fuels = sorted_list
     self.fuels = fuels
     haveGas = fuels.__contains__('Gas')
@@ -119,7 +119,9 @@ class Second(SecondTemplate):
     self.credits = self.emissions - self.n_emissions
     self.credits = round(self.credits)
     creds = self.credits/1000
-    alert("After switching to your new method you were able to reduce emissions by approximately " + str(self.credits) + " KGS representing around " + str(creds) + " carbon credits" )
+    open_form('First')
+    alert("After switching to your new method you were able to reduce emissions by approximately " + str(self.credits) + " KGS representing around " + str(creds) + " carbon credits")
+    
       
         
 
