@@ -1,11 +1,15 @@
-allow_embedding: false
-package_name: Carbon_Credits
-startup: {type: form, module: First}
-name: Carbon Credits
-startup_form: null
-runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
-metadata: {title: Powerpay Carbon Application, logo_img: 'asset:apple-touch_icon.png'}
+dependencies:
+- dep_id: dep_5od28ygmjvc6g
+  version: {dev: false}
+  resolution_hints: {app_id: INBK26FL6OGC5NLO, name: Clone of AnvilAugment (2), package_name: AnvilAugment}
 services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
+startup: {type: form, module: First}
+package_name: Carbon_Credits
+allow_embedding: false
+name: Carbon Credits
+runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
+metadata: {title: Powerpay Carbon Application, logo_img: 'asset:apple-touch_icon.png'}
+startup_form: null

@@ -9,7 +9,7 @@ class Second(SecondTemplate):
     self.fuelNum = fuelNum
     self.kwh = float(consumption)
     self.eff = float(efficiency)
-    sorted_list = sorted(fuels, key=lambda x: x != 'Gas')
+    sorted_list = sorted(my_list, key=lambda x: (x != 'Gas', x != 'Charcoal', x))
     fuels = sorted_list
     self.fuels = fuels
     haveGas = fuels.__contains__('Gas')
