@@ -2,6 +2,9 @@ dependencies:
 - dep_id: dep_5od28ygmjvc6g
   version: {dev: false}
   resolution_hints: {app_id: INBK26FL6OGC5NLO, name: Clone of AnvilAugment (2), package_name: AnvilAugment}
+- dep_id: dep_egia56n44ermvo
+  version: {dev: false}
+  resolution_hints: {app_id: C6ZZPAPN4YYF5NVJ, name: Anvil Extras, package_name: anvil_extras}
 services:
 - source: /runtime/services/tables.yml
   client_config: {}
