@@ -20,3 +20,8 @@ runtime_options:
   server_spec: {base: python310-minimal}
 metadata: {title: Powerpay Carbon Application, logo_img: 'asset:apple-touch_icon.png'}
 startup_form: null
+native_deps: {head_html: '<link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">'}

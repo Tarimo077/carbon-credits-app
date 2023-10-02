@@ -30,7 +30,7 @@ class Second(SecondTemplate):
       self.secondary.visible = False
     elif fuelNum == 2:
       if (haveGas == True):
-        self.lblPrimary.text = "How long does a full cylinder last you?(weeks)"
+        self.lblPrimary.text = "How long does a full cylinder of gas last you?(weeks)"
         self.lblSecondary.text = "How many kilos of " + str(fuels[1]) + " do you use in a week?"
       else:
         self.lblPrimary.text = "How many kilos of " + str(fuels[0]) + " do you use in a week?"
@@ -38,7 +38,7 @@ class Second(SecondTemplate):
       self.lblTertiary.visible = False
       self.tertiary.visible = False
     else:
-     self.lblPrimary.text = "How long does a full cylinder last you?(weeks)"
+     self.lblPrimary.text = "How long does a full cylinder of gas last you?(weeks)"
      self.lblSecondary.text = "How many kilos of " + str(fuels[1]) + " do you use in a week?"
      self.lblTertiary.text = "How many kilos of " + str(fuels[2]) + " do you use in a week?"      
 
